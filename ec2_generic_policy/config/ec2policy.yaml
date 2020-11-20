@@ -1,0 +1,17 @@
+Policies:
+  WindowsCommon:   # This becomes the name for the policy. 
+  - sid: Allow Access to S3 buckets
+    Effect: Allow
+    Action: 
+      - s3:ListBucket
+      - s3:GetBucketLocation  
+      - s3:Get*
+    Resources:
+      - arn:aws:s3:::bucketname
+      - arn:aws:s3:::anotherbucketname
+  - sid: GetWindowsSecrects
+    Effect: Allow
+    Action: 
+      - ssm:GetParameter
+    Resources:
+      - '*'

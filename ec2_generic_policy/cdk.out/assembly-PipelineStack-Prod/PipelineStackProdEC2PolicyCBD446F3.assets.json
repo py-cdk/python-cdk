@@ -1,0 +1,20 @@
+{
+  "version": "7.0.0",
+  "files": {
+    "b33ee2c4750c7ad6772fbcbab45bfba0d14fde807c8f6ff26a3f53989c0bed85": {
+      "source": {
+        "path": "PipelineStackProdEC2PolicyCBD446F3.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "123456789098-ap-southeast-2": {
+          "bucketName": "cdk-hnb659fds-assets-123456789098-ap-southeast-2",
+          "objectKey": "b33ee2c4750c7ad6772fbcbab45bfba0d14fde807c8f6ff26a3f53989c0bed85",
+          "region": "ap-southeast-2",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::123456789098:role/cdk-hnb659fds-file-publishing-role-123456789098-ap-southeast-2"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}
