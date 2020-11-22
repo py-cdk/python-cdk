@@ -49,7 +49,7 @@
                   {
                     "Ref": "AWS::Partition"
                   },
-                  ":codepipeline:ap-southeast-2:123456789098:",
+                  ":codepipeline:ap-southeast-2:160165474064:",
                   {
                     "Ref": "Pipeline9850B417"
                   }
@@ -103,7 +103,7 @@
                       {
                         "Ref": "AWS::Partition"
                       },
-                      ":iam::123456789098:root"
+                      ":iam::160165474064:root"
                     ]
                   ]
                 }
@@ -234,7 +234,7 @@
                       {
                         "Ref": "AWS::Partition"
                       },
-                      ":iam::123456789098:role/cdk-hnb659fds-deploy-role-123456789098-ap-southeast-2"
+                      ":iam::194433038617:role/cdk-hnb659fds-deploy-role-194433038617-ap-southeast-2"
                     ]
                   ]
                 }
@@ -297,6 +297,66 @@
       "DeletionPolicy": "Retain",
       "Metadata": {
         "aws:cdk:path": "PipelineStack/Pipeline/Pipeline/ArtifactsBucket/Resource"
+      }
+    },
+    "PipelineArtifactsBucketPolicyF53CCC52": {
+      "Type": "AWS::S3::BucketPolicy",
+      "Properties": {
+        "Bucket": {
+          "Ref": "PipelineArtifactsBucketAEA9A052"
+        },
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "s3:GetObject*",
+                "s3:GetBucket*",
+                "s3:List*"
+              ],
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":iam::194433038617:role/cdk-hnb659fds-deploy-role-194433038617-ap-southeast-2"
+                    ]
+                  ]
+                }
+              },
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "PipelineArtifactsBucketAEA9A052",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "PipelineArtifactsBucketAEA9A052",
+                          "Arn"
+                        ]
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              ]
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "PipelineStack/Pipeline/Pipeline/ArtifactsBucket/Policy/Resource"
       }
     },
     "PipelineRoleB27FAA37": {
@@ -414,7 +474,7 @@
                     {
                       "Ref": "AWS::Partition"
                     },
-                    ":iam::123456789098:role/cdk-hnb659fds-deploy-role-123456789098-ap-southeast-2"
+                    ":iam::194433038617:role/cdk-hnb659fds-deploy-role-194433038617-ap-southeast-2"
                   ]
                 ]
               }
@@ -567,7 +627,7 @@
                         {
                           "Ref": "AWS::Partition"
                         },
-                        ":iam::123456789098:role/cdk-hnb659fds-cfn-exec-role-123456789098-ap-southeast-2"
+                        ":iam::194433038617:role/cdk-hnb659fds-cfn-exec-role-194433038617-ap-southeast-2"
                       ]
                     ]
                   },
@@ -589,7 +649,7 @@
                       {
                         "Ref": "AWS::Partition"
                       },
-                      ":iam::123456789098:role/cdk-hnb659fds-deploy-role-123456789098-ap-southeast-2"
+                      ":iam::194433038617:role/cdk-hnb659fds-deploy-role-194433038617-ap-southeast-2"
                     ]
                   ]
                 },
@@ -616,7 +676,7 @@
                       {
                         "Ref": "AWS::Partition"
                       },
-                      ":iam::123456789098:role/cdk-hnb659fds-deploy-role-123456789098-ap-southeast-2"
+                      ":iam::194433038617:role/cdk-hnb659fds-deploy-role-194433038617-ap-southeast-2"
                     ]
                   ]
                 },
@@ -669,7 +729,7 @@
                       {
                         "Ref": "AWS::Partition"
                       },
-                      ":iam::123456789098:root"
+                      ":iam::160165474064:root"
                     ]
                   ]
                 }
@@ -803,7 +863,7 @@
                     {
                       "Ref": "AWS::Partition"
                     },
-                    ":codepipeline:ap-southeast-2:123456789098:",
+                    ":codepipeline:ap-southeast-2:160165474064:",
                     {
                       "Ref": "Pipeline9850B417"
                     }
@@ -842,7 +902,7 @@
                       {
                         "Ref": "AWS::Partition"
                       },
-                      ":iam::123456789098:root"
+                      ":iam::160165474064:root"
                     ]
                   ]
                 }
@@ -930,7 +990,7 @@
                       {
                         "Ref": "AWS::Partition"
                       },
-                      ":logs:ap-southeast-2:123456789098:log-group:/aws/codebuild/",
+                      ":logs:ap-southeast-2:160165474064:log-group:/aws/codebuild/",
                       {
                         "Ref": "PipelineBuildSynthCdkBuildProject6BEFA8E6"
                       }
@@ -945,7 +1005,7 @@
                       {
                         "Ref": "AWS::Partition"
                       },
-                      ":logs:ap-southeast-2:123456789098:log-group:/aws/codebuild/",
+                      ":logs:ap-southeast-2:160165474064:log-group:/aws/codebuild/",
                       {
                         "Ref": "PipelineBuildSynthCdkBuildProject6BEFA8E6"
                       },
@@ -972,7 +1032,7 @@
                     {
                       "Ref": "AWS::Partition"
                     },
-                    ":codebuild:ap-southeast-2:123456789098:report-group/",
+                    ":codebuild:ap-southeast-2:160165474064:report-group/",
                     {
                       "Ref": "PipelineBuildSynthCdkBuildProject6BEFA8E6"
                     },
@@ -1110,7 +1170,7 @@
                       {
                         "Ref": "AWS::Partition"
                       },
-                      ":iam::123456789098:root"
+                      ":iam::160165474064:root"
                     ]
                   ]
                 }
@@ -1198,7 +1258,7 @@
                       {
                         "Ref": "AWS::Partition"
                       },
-                      ":logs:ap-southeast-2:123456789098:log-group:/aws/codebuild/",
+                      ":logs:ap-southeast-2:160165474064:log-group:/aws/codebuild/",
                       {
                         "Ref": "PipelineUpdatePipelineSelfMutationDAA41400"
                       }
@@ -1213,7 +1273,7 @@
                       {
                         "Ref": "AWS::Partition"
                       },
-                      ":logs:ap-southeast-2:123456789098:log-group:/aws/codebuild/",
+                      ":logs:ap-southeast-2:160165474064:log-group:/aws/codebuild/",
                       {
                         "Ref": "PipelineUpdatePipelineSelfMutationDAA41400"
                       },
@@ -1240,7 +1300,7 @@
                     {
                       "Ref": "AWS::Partition"
                     },
-                    ":codebuild:ap-southeast-2:123456789098:report-group/",
+                    ":codebuild:ap-southeast-2:160165474064:report-group/",
                     {
                       "Ref": "PipelineUpdatePipelineSelfMutationDAA41400"
                     },

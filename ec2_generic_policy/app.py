@@ -1,7 +1,7 @@
 from aws_cdk import core
 from pipeline.pipeline_stack import PipelineStack
 
-pipeline_env = core.Environment(account="123456789098", region="ap-southeast-2")
+pipeline_env = core.Environment(account="160165474064", region="ap-southeast-2")
 
 
 app = core.App()

@@ -42,6 +42,6 @@ class PipelineStack(core.Stack):
     )
 
     # Add stages as required. 
-    app_env = core.Environment(account="123456789098", region="ap-southeast-2")  
+    app_env = core.Environment(account="194433038617", region="ap-southeast-2")  
     prod_app = Ec2PolicyStage(self, 'Prod', env = app_env)
     prod_stage = pipeline.add_application_stage(prod_app)
